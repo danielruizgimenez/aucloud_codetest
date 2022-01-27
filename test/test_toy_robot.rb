@@ -87,6 +87,9 @@ class TestToyRobot < Test::Unit::TestCase
 
     error = assert_raise(RuntimeError) { robot.read_command("PLACE 5, 3, WEST") }
     assert_equal("Position can't be higher than 4", error.to_s)
+
+    error = assert_raise(RuntimeError) { robot.read_command("PLACE -1, 3, WEST") }
+    assert_equal("Position can't be negative", error.to_s)
   end
 
   def test_left

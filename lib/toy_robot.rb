@@ -49,6 +49,7 @@ class ToyRobot
     pos_y = pos_y.to_i #Raises exception if not number
 
     raise "Position can't be higher than " + MAX_POSITION.to_s if (pos_x > MAX_POSITION || pos_y > MAX_POSITION)
+    raise "Position can't be negative" if (pos_x < 0 || pos_y < 0)
     raise "Not a valid facing value" unless FACING.key?(facing.to_sym)
 
     @position_x = pos_x
