@@ -1,0 +1,15 @@
+case_a: [
+  "PLACE 0, 0, NORTH",
+  "MOVE",
+  "REPORT"]
+case_b: [
+  "PLACE 0, 0, NORTH",
+  "LEFT",
+  "REPORT"]
+case_c: [
+  "PLACE 1, 2, EAST",
+  "MOVE",
+  "MOVE",
+  "LEFT",
+  "MOVE",
+  "REPORT"]
