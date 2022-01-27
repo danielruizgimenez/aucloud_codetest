@@ -47,7 +47,6 @@ class ToyRobot
     raise "Position Y cannot be empty" if pos_x.nil?
     raise "Positions have to be a number" unless (pos_x.is_a? Numeric) && (pos_y.is_a? Numeric)
     raise "Position can't be higher than " + MAX_POSITION.to_s if (pos_x > MAX_POSITION || pos_y > MAX_POSITION)
-    raise "Position can't be higher than " + MAX_POSITION.to_s if (pos_x > MAX_POSITION || pos_y > MAX_POSITION)
     raise "Position can't be negative" if (pos_x < 0 || pos_y < 0)
     raise "Not a valid facing value" unless FACING.key?(facing.to_sym)
 
