@@ -92,6 +92,19 @@ class TestToyRobot < Test::Unit::TestCase
     assert_equal("Position can't be negative", error.to_s)
   end
 
+  def test_place_wrong_numbers
+    robot = ToyRobot.new
+
+    error = assert_raise(RuntimeError) { robot.read_command "PLACE asd, asd, EAST" }
+    assert_equal("Positions have to be a number", error.to_s)
+
+    error = assert_raise(RuntimeError) { robot.read_command "PLACE asd, 2, EAST" }
+    assert_equal("Positions have to be a number", error.to_s)
+
+    error = assert_raise(RuntimeError) { robot.read_command "PLACE 1, asd, EAST" }
+    assert_equal("Positions have to be a number", error.to_s)
+  end
+
   def test_left
     robot = ToyRobot.new
     robot.read_command "PLACE 0, 0, EAST"
